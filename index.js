@@ -16,7 +16,7 @@ app.post("/generate", async (req, res) => {
   if (!prompt) {
     return res.status(400).json({ error: "Aucun prompt fourni" });
   }
-
+console.log("✅ Clé API utilisée :", GEMINI_API_KEY);
   try {
     const response = await axios.post(
       `https://generativeai.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${GEMINI_API_KEY}`,
@@ -32,7 +32,9 @@ app.post("/generate", async (req, res) => {
     res.status(500).json({ error: "Erreur Gemini", details: error.message });
   }
 });
-
+app.listen(PORT, () => {
+  console.log("Serveur Gemini en ligne sur le port", PORT);
+});
 app.listen(PORT, () => {
   console.log("Serveur Gemini en ligne sur le port", PORT);
 });
