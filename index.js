@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const axios = require("axios");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 app.use(cors());
