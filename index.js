@@ -32,9 +32,7 @@ console.log("✅ Clé API utilisée :", GEMINI_API_KEY);
     res.status(500).json({ error: "Erreur Gemini", details: error.message });
   }
 });
-app.listen(PORT, () => {
-  console.log("Serveur Gemini en ligne sur le port", PORT);
-});
+
 app.listen(PORT, () => {
   console.log("Serveur Gemini en ligne sur le port", PORT);
 });
